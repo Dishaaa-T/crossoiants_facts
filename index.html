@@ -59,19 +59,16 @@
     <div id="app">
         <h1>Croissant Fun Facts</h1>
         <ul id="facts-list"></ul>
-        <button id="replace-facts">Replace Facts</button>
+        <button id="next-fact">Next Fact</button>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const initialFacts = [
+            const facts = [
                 "Origin Debate: Despite being synonymous with French cuisine, the croissant actually has Austrian origins. It is believed to have been inspired by the Austrian kipferl, a crescent-shaped pastry.",
                 "Marie Antoinette's Influence: The croissant was popularized in France by Marie Antoinette, who was originally from Austria. She introduced the pastry to the French court.",
                 "Shape Significance: The crescent shape of the croissant is said to commemorate the victory of the Franks over the Umayyad forces at the Battle of Tours in 732, symbolizing the crescent on the Islamic flag.",
                 "Butter Content: A traditional French croissant is made with a significant amount of butter, which contributes to its flaky texture. In fact, French law dictates that a croissant must contain at least 25% butter.",
-                "Laminated Dough: Croissants are made using a technique called lamination, where dough and butter are layered and folded multiple times to create a light, flaky texture."
-            ];
-
-            const newFacts = [
+                "Laminated Dough: Croissants are made using a technique called lamination, where dough and butter are layered and folded multiple times to create a light, flaky texture.",
                 "World Croissant Day: There is a day dedicated to celebrating this delicious pastry—World Croissant Day is observed on January 30th each year.",
                 "Variety of Flavors: While the classic croissant is plain, there are many variations, including chocolate-filled (pain au chocolat), almond, and even savory options like ham and cheese.",
                 "Popularity in France: In France, croissants are a staple of breakfast and are often enjoyed with coffee or hot chocolate.",
@@ -80,21 +77,21 @@
             ];
 
             const factsList = document.getElementById('facts-list');
-            const replaceButton = document.getElementById('replace-facts');
+            const nextFactButton = document.getElementById('next-fact');
+            let currentFactIndex = 0;
 
-            function displayFacts(facts) {
+            function displayFact(index) {
                 factsList.innerHTML = '';
-                facts.forEach(fact => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = fact;
-                    factsList.appendChild(listItem);
-                });
+                const listItem = document.createElement('li');
+                listItem.textContent = facts[index];
+                factsList.appendChild(listItem);
             }
 
-            displayFacts(initialFacts);
+            displayFact(currentFactIndex);
 
-            replaceButton.addEventListener('click', () => {
-                displayFacts(newFacts);
+            nextFactButton.addEventListener('click', () => {
+                currentFactIndex = (currentFactIndex + 1) % facts.length;
+                displayFact(currentFactIndex);
             });
         });
     </script>
