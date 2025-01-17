@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croissant Fun Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #e9ecef;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Croissant Fun Facts</h1>
+        <ul id="facts-list"></ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const facts = [
+                "Origin Debate: Despite being synonymous with French cuisine, the croissant actually has Austrian origins. It is believed to have been inspired by the Austrian kipferl, a crescent-shaped pastry.",
+                "Marie Antoinette's Influence: The croissant was popularized in France by Marie Antoinette, who was originally from Austria. She introduced the pastry to the French court.",
+                "Shape Significance: The crescent shape of the croissant is said to commemorate the victory of the Franks over the Umayyad forces at the Battle of Tours in 732, symbolizing the crescent on the Islamic flag.",
+                "Butter Content: A traditional French croissant is made with a significant amount of butter, which contributes to its flaky texture. In fact, French law dictates that a croissant must contain at least 25% butter.",
+                "Laminated Dough: Croissants are made using a technique called lamination, where dough and butter are layered and folded multiple times to create a light, flaky texture.",
+                "World Croissant Day: There is a day dedicated to celebrating this delicious pastry—World Croissant Day is observed on January 30th each year.",
+                "Variety of Flavors: While the classic croissant is plain, there are many variations, including chocolate-filled (pain au chocolat), almond, and even savory options like ham and cheese.",
+                "Popularity in France: In France, croissants are a staple of breakfast and are often enjoyed with coffee or hot chocolate.",
+                "Croissant vs. Viennoiserie: Croissants are part of a category of baked goods known as viennoiseries, which are pastries made from a yeast-leavened dough similar to bread, but with added ingredients like eggs, butter, milk, cream, and sugar.",
+                "Cultural Icon: The croissant has become a cultural icon and is often used to represent French culture and cuisine worldwide."
+            ];
+
+            const factsList = document.getElementById('facts-list');
+
+            facts.forEach(fact => {
+                const listItem = document.createElement('li');
+                listItem.textContent = fact;
+                factsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
